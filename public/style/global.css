@@ -1,0 +1,64 @@
+*{outline: none;}
+body,h1{font-family: 微软雅黑;}
+body{background-color: #EEE;}
+a:hover{color:transparent;}
+.mynav{
+	background-color:#34495e;
+	box-shadow:0 1px 3px rgba(0, 0, 0, 0.2)
+}
+.mynav a{color:#EEE}
+.mynav a:hover{color:#34495e;}
+/*.mynav li{width:80px;text-align:center;}*/
+.mynav li.active{border-bottom:2px solid #e67e22;background-color:#95a5a6;}
+.mynav li.active>a{}
+.mynav li:hover{background-color:none;}
+/*
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #333333;
+  background-color: green;
+}*/
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  color:#fefefe;
+  background-color: transparent;
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+  text-decoration: none;
+  color:#FFF;
+}
+.navbar-header a:hover {color:#FEFEFE;text-decoration: none;}
+.container{width:1000px;}
+.mycon{margin-top: 80px;}
+hr{border-color:#CACACA;}
+.myheader{color:#34495e;border-bottom:2px solid #34495e;width:120px;text-align: center;margin-bottom:-20px;}
+.reg_container{margin-top:80px;}
+.reg_container p{border-top:none;border-bottom:1px solid;margin-bottom: 50px;}
+#reg_form{margin-top:50px;width:400px;padding-left:100px;}
+.form-control{border-radius:0;height:40px;width:350px;}
+.form-control:focus{box-shadow:0 0px 0px rgba(0, 0, 0, 0) inset;border-color:#e67e22;}
+footer {border-top: 1px solid #CACACA;width: 70%;margin: auto;margin-top: 100px;color: #CACACA;text-align: center;padding: 10px;}
+
+.btn.btn-default{background-color:#e67e22;color:#FEFEFE;box-shadow:0 0px 0px; border:none;border-radius: 0;}
+.btn.btn-default:hover{background-color:#d35400;box-shadow:0 0px 0px; border:none;}
+.btn-primary.btn-lg.btn-block{width:350px;}
+
+.btn.btn-primary{border-radius: 0;}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus { background-color:transparent;}
+#myModal{margin-top: 100px;}
+.modal-content{border-radius: 0;border-color: #34495e;box-shadow:0 5px 15px rgba(52, 73, 94,0.5);}
+.modal-backdrop{background-color:#FFF;}
+
+.panItem{width: 100px;height: 130px;padding: 10px;cursor: pointer;background-color: #bdc3c7;}
+.panItem img{height:80px;}
+.panItem:hover{background-color: #95a5a6;}
+.panItem > span{	text-align: center;width: 100%;display: block;margin-top: 10px;font-size: 18px;}
+
+.wcsite-home-page { margin-top:80px;}
+
+.myheader.h3{width:200px;}
+
+.btn.pickpic{border:1px solid #EEE;background-color: orange;color:#FFF;border-radius: 0;}

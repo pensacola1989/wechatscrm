@@ -1,0 +1,44 @@
+body{
+	font-family: 微软雅黑;
+}
+.navbar-inverse {
+	background:none;
+}
+.navbar.mynav{
+	background-color: #563d7c;
+	background-image: none;
+}
+.navbar-inverse .navbar-nav>li>a
+{
+    color:#cdbfe3;
+}
+.navbar-inverse .navbar-brand{
+	color:#cdbfe3;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+	background-color:#463265;
+}
+
+.container.register{margin-top: 100px;margin-left:300px;}
+
+ul.sidebar{width:200px;min-height:100%;position:fixed;padding:0;background-color:#f7f5fa;padding-top:50px;top:50px;}
+li.sidebar-item{list-style:none;width:100%;text-align:center;padding:0;}
+li.sidebar-item > a{color:#716b7a;}
+.normal-bar-item{float:left;}
+li.sidebar-item:hover{background-color: #e1e1e8;border-right:1px solid #563d7c;}
+.sidebar-item.active{background-color: #e1e1e8;border-right:1px solid #563d7c;}
+li.sidebar-item>a{display: block;width:100%;padding:6px;}
+.iframe-container{
+	position: absolute;
+	left:200px;
+	top:50px;
+	bottom:0;
+	right:0;
+}
+.iframe-container iframe{
+	margin:0;
+	height:100%;
+	width:100%;
+	border:none;
+}

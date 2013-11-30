@@ -5,12 +5,22 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
 	protected $table = 'users';
+
+	
+	/**
+	* Relations with accounts
+	*/
+	public function accounts()
+	{
+		return $this->hasMany('Accounts');
+	}
 
 	/**
 	 * The attributes excluded from the model's JSON form.
