@@ -42,3 +42,7 @@ li.sidebar-item>a{display: block;width:100%;padding:6px;}
 	width:100%;
 	border:none;
 }
+
+.imglink:hover{
+	color:#333;
+}

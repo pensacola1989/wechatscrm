@@ -35,7 +35,9 @@ Route::get('/getuser',function ()
 	dd($ret);
 });
 //Route::get('/wcsite', 'website\HomeController@index');
-Route::get('/wcsite', array('uses' => 'website\HomeController@index'));
+Route::get('/wcsite', array('uses' => 'website\HomeController@index'))->before('auth');
+Route::post('/wcsite',array('uses' => 'website\HomeController@saveHome'))->before('auth');
+
 Route::get('/register', 'UserController@register')->before('guest');
 Route::get('/login', 'UserController@userLogin')->before('guest');
 Route::get('/admin/home', 'UserController@index');
@@ -77,11 +79,6 @@ Route::post('upload', function() {
 		$fileName = Input::has('name') ? Input::get('name') : str_random(6);
 		$contentType = Request::server('HTTP_CONTENT_TYPE');
 		$extension =  Input::hasFile('up-file') ? Input::file('up-file')->getClientOriginalExtension() : '';
-
-		// $file = Input::file('up-file');
-		// $destinationPath = public_path() . '/uploadFile';
-		// $filename = str_random(6) . '_' . $file->getClientOriginalName();
-		// $file->move($destinationPath,$filename);
 	}
 });
 

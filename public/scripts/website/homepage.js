@@ -1,7 +1,18 @@
 var homepage = (function () {
 	
+
+	var model = {
+		homeTitle: '',
+		keyword: '',
+		messageCover: '',
+		logoImg: '',
+		homeBg: ''
+	}
+
 	var config = {
-		uploadUrl: '/upload2'
+		uploadUrl: '/upload2',
+		uploadClass: 'pickpic',
+		sub_btn: '#submit'
 	};
 
 	function initUploader (opts) {
@@ -50,15 +61,50 @@ var homepage = (function () {
         });	
 	}
 
+	function bindSubmit () {
+		//$(config.sub_btn).button();
+		$(config.sub_btn).bind('click',function () {
+			$(this).addClass('disabled').html('正在提交');
+			generateJson();
+			postData({ data: JSON.stringify(model)});
+		});
+	}
+
+	function postData(model) {
+		$.ajax({
+            type: 'POST',
+            data: model,
+            url: '/wcsite',
+            dataType: 'json'
+        })
+        .success(function (data) {
+        	console.log(data);	
+        	$(config.sub_btn).button('reset');
+        })
+        .error(function () {
+        
+        })
+        .complete(function () {
+        	$(config.sub_btn).removeClass('disabled').html('提交');
+        });
+	}
+
 	function init () {
-		// var opt = {};
-		// opt.idselector = 'pickpic-btn';
-		// opt.maxFileSize = '200mb';
-		// opt.chunkSize = '512kb';
-		// opt.isMulti = false;
-		// opt.exts = 'jpg,png,mp3,mp4,gif';
-		//initUploader(opt);
-		bindUploader('pickpic');
+		bindUploader(config.uploadClass);
+		bindSubmit();
+	}
+
+	// homeTitle: '',
+	// keyword: '',
+	// messageCover: '',
+	// logoImg: '',
+	// homeBg: ''
+	function generateJson () {
+		model.homeTitle = $('#inputTitle').val();
+		model.keyword = $('#inputKeyword').val();
+		model.messageCover = $('#messageCover').attr('src');
+		model.logoImg = $('#logoImg').attr('src');
+		model.homeBg = $('#homeBg').attr('src');
 	}
 
 	function bindUploader (className) {

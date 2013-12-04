@@ -19,7 +19,7 @@
 	  </div>
 	  <div class="form-group">
 	  	<label class="col-sm-2 control-label">图文消息封面</label>
-	  	<img src="http://ww1.sinaimg.cn/bmiddle/6538fd8cjw1eb0jzna64mj209605kaa7.jpg" style="margin-left:20px;height:80px;"/>
+	  	<img id="messageCover" src="http://ww1.sinaimg.cn/bmiddle/6538fd8cjw1eb0jzna64mj209605kaa7.jpg" style="margin-left:20px;height:80px;"/>
 	  	<button id="pickpic-btn" type="button" class="btn pickpic" style="border:1px solid;margin-left:100px;padding:5px;">
 	  	<span class="glyphicon glyphicon-plus"></span>
 	  	选择
@@ -28,7 +28,7 @@
 	  </div>
 	  <div class="form-group">
 	  	<label class="col-sm-2 control-label">logo图</label>
-	  	<img src="http://ww1.sinaimg.cn/bmiddle/6538fd8cjw1eb0jzna64mj209605kaa7.jpg" style="margin-left:20px;height:80px;"/>
+	  	<img id="logoImg" src="http://ww1.sinaimg.cn/bmiddle/6538fd8cjw1eb0jzna64mj209605kaa7.jpg" style="margin-left:20px;height:80px;"/>
 	  	<button id="logo-btn" type="button" class="btn pickpic" style="border:1px solid;margin-left:100px;padding:5px;">
 	  	<span class="glyphicon glyphicon-plus"></span>
 	  	选择
@@ -37,7 +37,7 @@
 	  </div>
 	  <div class="form-group">
 	  	<label class="col-sm-2 control-label">首页背景</label>
-	  	<img src="http://ww1.sinaimg.cn/bmiddle/6538fd8cjw1eb0jzna64mj209605kaa7.jpg" style="margin-left:20px;height:80px;"/>
+	  	<img id="homeBg" src="http://ww1.sinaimg.cn/bmiddle/6538fd8cjw1eb0jzna64mj209605kaa7.jpg" style="margin-left:20px;height:80px;"/>
 	  	<button id="bg-btn" type="button" class="btn pickpic" style="border:1px solid;margin-left:100px;padding:5px;">
 	  	<span class="glyphicon glyphicon-plus"></span>
 	  	选择
@@ -46,7 +46,7 @@
 	  </div>
 	  <div class="form-group">
 	  	<div class="col-sm-offset-2 col-sm-10">
-	  		<button type="button" class="btn btn-primary">提交</button>
+	  		<button type="button" id="submit" class="btn btn-primary">提交</button>
 	  	</div>
 	  </div>
 	</div>
