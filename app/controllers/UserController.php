@@ -1,6 +1,12 @@
 <?php
+use Acme\User\UserRepInterface;
 
 class UserController extends BaseController {
+
+	public function __construct(UserRepInterface $userRep)
+	{
+		$this->userRep = $userRep;
+	}
 
 	public function index()
 	{
@@ -33,16 +39,19 @@ class UserController extends BaseController {
 		$user->mobile = Input::get('mobile');
 
 		try {
-			$user->save();			
-			// Generate User's Account informations
-			$account = new Accounts;
-			$account->userid = $user->id;
-			$account->callbackurl = 'http://wcscm.com/api/xxxx';
-			$account->token = 'x320sdf-';
+			if($userid = $this->userRep->addUser($user))
+			{
+				//dd($user);
+				// Generate User's Account informations
+				$account = new Accounts;
+				$account->userid = $userid;
+				$account->callbackurl = 'http://wcscm.com/api/xxxx';
+				$account->token = 'x320sdf-';
 
-			$account->save();
+				$account->save();
 
-			Auth::login($user, false);
+				Auth::login($user, false);
+			}
 		} catch (Exception $e) {
 			return $e->getMessage();
 		}

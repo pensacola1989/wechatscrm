@@ -7,12 +7,15 @@ class Home implements HomeInterface {
 	public function SaveHome($userid,$websiteData)
 	{
 		try {
+
 			if($website = $this->userHasRecord($userid)) {
+
 				$website->homepage = $websiteData;
 				$website->save();
 			} 
 			else 
 			{
+
 				$website = new Website;
 				$website->userid = $userid;
 				$website->homepage = $websiteData;
@@ -34,6 +37,6 @@ class Home implements HomeInterface {
 	private function userHasRecord($uid) 
 	{
 		return Website::where('userid',$uid)
-						->firstOrFail();
+						->first();
 	}
 }

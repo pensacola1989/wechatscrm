@@ -25,7 +25,7 @@ class HomeController extends Controller {
 		$uid = Auth::user()->id;
 		$websiteData = Input::get('data');
 
-		return $this->homeRespsitroy->saveHome($uid,$websiteData);
+		return $this->homeRespsitroy->SaveHome($uid,$websiteData);
 	}
 
 	public function getData()

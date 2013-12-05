@@ -115,7 +115,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Acme\Product\Anvil\AnvilServiceProvider',
     	'Acme\Product\Tnt\TntServiceProvider',
-    	'Acme\wcsite\home\HomeResProvider'
+    	'Acme\wcsite\home\HomeResProvider',
+    	'Acme\User\UserServiceProvider'
 	),
 
 	/*
