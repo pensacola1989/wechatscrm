@@ -1,5 +1,10 @@
 var homepage = (function () {
 	
+	var $title = $('#inputTitle')
+		, $keyword = $('#inputKeyword')
+		, $messageCover = $('#messageCover')
+		, $logoImg = $('#logoImg')
+		, $homeBg = $('#homeBg');
 
 	var model = {
 		homeTitle: '',
@@ -10,7 +15,7 @@ var homepage = (function () {
 	}
 
 	var config = {
-		uploadUrl: '/upload2',
+		uploadUrl: '/upload',
 		uploadClass: 'pickpic',
 		sub_btn: '#submit'
 	};
@@ -80,6 +85,11 @@ var homepage = (function () {
         .success(function (data) {
         	console.log(data);	
         	$(config.sub_btn).button('reset');
+        	$.ambiance({
+        		message: "保存成功！", 
+	            title: "消息",
+	            type: "success"
+	        });
         })
         .error(function () {
         
@@ -89,7 +99,39 @@ var homepage = (function () {
         });
 	}
 
+	function renderData(data) {
+		if(!data)
+			return;
+
+		$title.val(data.homeTitle);
+		$keyword.val(data.keyword);
+		$messageCover.attr('src',data.messageCover);
+		$logoImg.attr('src',data.logoImg);
+		$homeBg.attr('src',data.homeBg);
+	}
+
+	function loadData () {
+		$.ajax({
+			type: 'GET',
+			data: {},
+			url: '/wcsite/data',
+			dataType: 'json'
+		})
+		.success(function (data) {
+			if(data && data.homepage) {
+				renderData(JSON.parse(data.homepage));
+			}
+		})
+		.error(function () {
+			
+		})
+		.complete(function () {
+			
+		});
+	}
+
 	function init () {
+		loadData();
 		bindUploader(config.uploadClass);
 		bindSubmit();
 	}

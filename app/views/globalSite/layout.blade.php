@@ -9,7 +9,8 @@
   	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{{ HTML::style('/style/bootstrap.css')}}
+  {{ HTML::style('/style/jquery.ambiance.css') }}
+	{{ HTML::style('/style/bootstrap.css') }}
 	{{-- HTML::style('/style/bootstrap-theme.min.css') --}}
 	{{ HTML::style('/style/global.css') }}
 </head>
@@ -67,6 +68,7 @@
 </div>
 
 {{ HTML::script('/scripts/jquery.js') }}
+{{ HTML::script('/scripts/jquery.ambiance.js') }}
 {{ HTML::script('/scripts/bootstrap.min.js') }}
 <script type="text/javascript">
   $(document).ready(function () {}

@@ -4,4 +4,5 @@ interface HomeInterface {
 
 	public function SaveHome($uid,$websiteData);
 
+	public function getHome($uid);
 }
