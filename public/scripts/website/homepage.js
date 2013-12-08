@@ -84,7 +84,7 @@ var homepage = (function () {
         })
         .success(function (data) {
         	console.log(data);	
-        	$(config.sub_btn).button('reset');
+        	$(config.sub_btn).button('reset');	
         	$.ambiance({
         		message: "保存成功！", 
 	            title: "消息",

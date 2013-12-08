@@ -26,7 +26,7 @@ var login = login || (function () {
 			data: form
 		})
 		.success(function (data) {
-			alert(data);
+			//alert(data);
 			window.location.href = '/dashboard';
 		})
 		.error(function () {

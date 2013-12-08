@@ -10,6 +10,15 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+Route::get('/frame', function() {
+	return View::make('globalSite.mlayout');
+})->before('auth');
+
+Route::get('/frame/home', array('uses' => 'Frame\HomeController@index'))->before('auth');
+Route::get('/frame/testhome', array('uses' => 'Frame\HomeController@test'))->before('auth');
+
+
 Route::get('/', 'UserController@dashboard')->before('auth');
 Route::get('testioc', 'TestController@index');
 Route::get('/wcsite', array('uses' => 'website\HomeController@index'))->before('auth');
