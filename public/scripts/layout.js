@@ -13,8 +13,18 @@ layout.makeBar = function (isBarOpen) {
 	var frame = $('.frame_container');
 
 	if(!isBarOpen) {
-		frame.css('left',0)
+		//frame.css('left',0)
+		frame.animate({
+			'left': 0
+		},300,'swing',function () {
+			
+		});
 		return;
 	} 
-	frame.css('left',200);
+	frame.animate({
+		'left': 200
+	},300,'swing',function () {
+		
+	});
+	//frame.css('left',200);
 };

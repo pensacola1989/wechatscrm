@@ -30,7 +30,8 @@ class Home implements HomeInterface {
 	public function getHome($uid)
 	{
 		$website = Website::where('userid',$uid)
-							->firstOrFail();
+							->first();
+		//dd($website);exit();
 		return $website;
 	}
  

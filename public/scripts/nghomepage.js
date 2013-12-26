@@ -2,12 +2,24 @@ var homepage = angular.module('home',[],function ($interpolateProvider) {
 	$interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 });
-
+//-------------------new feature--------------------------------
+// homepage.config(function ($routeProvider) {
+// 	$routeProvider.when('/index', {
+//         templateUrl: 'home.html',
+//         controller: 'homeCtrl'
+//       })
+//       .otherwise({
+//         redirectTo: '/index'
+//       });
+// });
+//--------------------------------------------------------------
 homepage.controller('homeCtrl',function ($scope,homeservice,$rootScope) {
 	homeservice
 		.getData()
 		.success(function (data) {
-			$scope.model = JSON.parse(data.homepage);
+			if(data != '') {
+				$scope.model = JSON.parse(data.homepage);				
+			}
 			$rootScope.$broadcast('httpend');
 		});
 	$scope.model = {
@@ -139,4 +151,14 @@ homepage.directive('uploadBtn',function () {
             });
         }
     };
-});
+})
+.directive('fadeIn',['$timeout',function (timer) {
+	return {
+		restrict: 'A',
+		link: function (scope,elem,attrs) {
+			scope.$on('httpend',function () {
+				$(elem).fadeIn();
+			});
+		}
+	}
+}]);

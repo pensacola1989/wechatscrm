@@ -17,6 +17,7 @@ Route::get('/frame', function() {
 
 Route::get('/frame/home', array('uses' => 'Frame\HomeController@index'))->before('auth');
 Route::get('/frame/testhome', array('uses' => 'Frame\HomeController@test'))->before('auth');
+Route::get('/frame/category', array('uses' => 'Frame\CategoryController@index'))->before('auth');
 
 
 Route::get('/', 'UserController@dashboard')->before('auth');

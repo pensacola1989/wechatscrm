@@ -14,10 +14,11 @@
 	{{-- HTML::style('/style/bootstrap-theme.min.css') --}}
 	{{ HTML::style('/style/global.css') }}
 </head>
-<body ng-app="home" ng-controller="homeCtrl" fade-in style="display:none;">
+<body ng-app="home" ng-controller="homeCtrl">
+
 <div class="wrapper">
 <div class="container wcsite-home-page">
-<h3 class="myheader h3"><span class="glyphicon glyphicon-list-alt"></span>网站首页设置</h3>
+<h3 class="myheader h3">网站首页设置</h3>
 	<hr/>
 	<dive class="form-horizontal">
 	  <div class="form-group">
@@ -30,19 +31,6 @@
 	    <label for="inputKeyword" class="col-sm-2 control-label">触发关键字</label>
 	    <div class="col-sm-10">
 	      <input ng-model="model.keyword" type="text" class="form-control" id="inputKeyword" placeholder="触发关键字">
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputrule" class="col-sm-2 control-label">匹配模式</label>
-	    <div class="col-sm-10">
-	    	<div class="controls">
-	            <label class="radio">
-	                <input type="radio" name="matchtype" checked="checked">完全匹配（用户输入的和此关键词一样才会触发!）
-	            </label>
-	            <label class="radio ">
-	                <input type="radio" name="matchtype">包含匹配 (只要用户输入的文字包含本关键词就触发！)
-	            </label>
-	        </div>
 	    </div>
 	  </div>
 	  <div class="form-group">
@@ -65,8 +53,8 @@
 	  </div>
 	  <div class="form-group">
 	  	<label class="col-sm-2 control-label">首页背景</label>
-	  	<img id="homeBg" ng-src="<% model.homeBg %>" style="margin-left:20px;height:80px;"/>
-	  	<button btnmodel="model.homeBg" upload-btn id="bg-btn" type="button" class="btn pickpic" style="border:1px solid;margin-left:100px;padding:5px;">
+	  	<img id="homeBg" ng-src="<% model.homgBg %>" style="margin-left:20px;height:80px;"/>
+	  	<button btnmodel="model.homgBg" upload-btn id="bg-btn" type="button" class="btn pickpic" style="border:1px solid;margin-left:100px;padding:5px;">
 	  	<span class="glyphicon glyphicon-plus"></span>
 	  	选择
 	  	</button>

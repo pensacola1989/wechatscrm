@@ -22,7 +22,7 @@
       <div class="container pull-left">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Wechat SCRM</a>
-          <a href="javascript:void(null);" id="toggleBar" style="float:left;" class="glyphicon glyphicon-align-justify"></a>
+          <a href="javascript:void(null);" id="toggleBar" style="float: left;" class="glyphicon glyphicon-align-justify"></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -71,9 +71,10 @@
         <li class="tree_item open">
           <a><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;&nbsp;&nbsp;微信网站</a>
           <ul class="tree_child">
-            <li class="child_item"><a>网站首页</a></li>
+            <li class="child_item">{{ HTML::link('frame/testhome','网站首页',array('target' => 'contentFrame')) }}</li>
+            <li class="child_item">{{ HTML::link('/frame/category','分类设置',array('target' => 'contentFrame')) }}</li>
             <!-- <li class="child_item"><a>分类页面</a></li> -->
-            <li class="child_item">{{ HTML::link('frame/testhome','AngularJs分类页面',array('target' => 'contentFrame')) }}</li>
+            
             <li class="child_item active"><a>详细页面</a></li>
             <li class="child_item"><a>其他设置</a></li>
           </ul>
@@ -121,7 +122,7 @@
       </ul>
     </div>
     <div class="frame_container">
-      <iframe name="contentFrame" id="contentFrame" src="{{url('frame/home')}}"></iframe>
+      <iframe name="contentFrame" id="contentFrame" src="{{url('frame/testhome')}}"></iframe>
     </div>    
 </div>
 

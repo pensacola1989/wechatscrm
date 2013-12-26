@@ -13,6 +13,14 @@ li.tree_item{color:#333;padding-top:5px;padding:-bottom:5px;}
 .tree_item.open:hover{font-weight:normal;}
 .tree_child.active{background:#EFEFEF;}
 ul.active:hover{background:none;}
-.tree_item a{display:block;text-align:left;padding-left:40px;padding-top:7px;padding-bottom:7px;}
-.child_item a{color:#333;font-size: 13px;text-align: center;}
+.tree_item a{display:block;text-align:left;padding-left:40px;
+	padding-top:3px;padding-bottom:3px;
+}
+.child_item a{color:#333;font-size: 10px;text-align: center;}
 .tree_item.open>a{font-weight: bold;}
+/*::-webkit-scrollbar {
+width: 7px;
+height: 17px;
+background-color: #f0f0f0;
+border: none;
+}*/
